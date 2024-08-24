@@ -94,11 +94,11 @@
             <h3>Datos de Planilla</h3>
             <div class="form-group">
                 <label for="htrabajadas" class="form-label">Horas Trabajadas</label>
-                <input type="number" id="htrabajadas" name="htrabajadas" required>
+                <input type="number" id="htrabajadas" name="htrabajadas" required oninput="calcularSalarios();">
             </div>
             <div class="form-group">
                 <label for="shora" class="form-label">Salario por Hora</label>
-                <input type="number" step="0.01" id="shora" name="shora" required>
+                <input type="number" step="0.01" id="shora" name="shora" required oninput="calcularSalarios();">
             </div>
 
             <div class="form-group">
@@ -119,16 +119,16 @@
             </div>
             <div class="form-group">
                 <label for="otros_descuentos1" class="form-label">Otros Descuentos 1</label>
-                <input type="number" step="0.01" id="otros_descuentos1" name="otros_descuentos1">
+                <input type="number" step="0.01" id="otros_descuentos1" name="otros_descuentos1" oninput="calcularSalarios();">
             </div>
             
             <div class="form-group">
                 <label for="otros_descuentos2" class="form-label">Otros Descuentos 2</label>
-                <input type="number" step="0.01" id="otros_descuentos2" name="otros_descuentos2">
+                <input type="number" step="0.01" id="otros_descuentos2" name="otros_descuentos2" oninput="calcularSalarios();">
             </div>
             <div class="form-group">
                 <label for="otros_descuentos3" class="form-label">Otros Descuentos 3</label>
-                <input type="number" step="0.01" id="otros_descuentos3" name="otros_descuentos3" onblur="calcularTotalDeducciones();">
+                <input type="number" step="0.01" id="otros_descuentos3" name="otros_descuentos3" oninput="calcularSalarios();" onblur="calcularTotalDeducciones();">
             </div>
 
             <div class="form-group">
