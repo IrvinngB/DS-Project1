@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Planilla</title>
+    <link href="estilo.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Planilla</h1>
+        <form id="planillaForm" action="procesar_planilla.php" method="POST" onsubmit="return validarFormulario();">
+            <!-- Datos Generales -->
+            <h3>Datos Generales</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="prefijo" class="form-label">Prefijo</label>
+                    <select id="prefijo" name="prefijo" required>
+                        <option value="" disabled selected>Seleccione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">E</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tomo" class="form-label">Tomo</label>
+                    <input type="text" id="tomo" name="tomo" required>
+                </div>
+                <div class="form-group">
+                    <label for="asiento" class="form-label">Asiento</label>
+                    <input type="text" id="asiento" name="asiento" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombre1" class="form-label">Primer Nombre</label>
+                    <input type="text" id="nombre1" name="nombre1" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre2" class="form-label">Segundo Nombre</label>
+                    <input type="text" id="nombre2" name="nombre2">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="apellido1" class="form-label">Primer Apellido</label>
+                    <input type="text" id="apellido1" name="apellido1" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido2" class="form-label">Segundo Apellido</label>
+                    <input type="text" id="apellido2" name="apellido2">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="provincia" class="form-label">Provincia</label>
+                <select id="provincia" name="provincia" required onchange="cargarDistritos();">
+                    <option value="" disabled selected>Seleccione una provincia</option>
+                    <option value="provincia1">Provincia 1</option>
+                    <option value="provincia2">Provincia 2</option>
+                    <!-- Agrega más provincias -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="distrito" class="form-label">Distrito</label>
+                <select id="distrito" name="distrito" required onchange="cargarCorregimientos();">
+                    <option value="" disabled selected>Seleccione un distrito</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="corregimiento" class="form-label">Corregimiento</label>
+                <select id="corregimiento" name="corregimiento" required>
+                    <option value="" disabled selected>Seleccione un corregimiento</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="direccion" class="form-label">Dirección</label>
+                <textarea id="direccion" name="direccion" rows="3" required></textarea>
+            </div>
+
+            <!-- Datos de Planilla -->
+            <h3>Datos de Planilla</h3>
+            <div class="form-group">
+                <label for="htrabajadas" class="form-label">Horas Trabajadas</label>
+                <input type="number" id="htrabajadas" name="htrabajadas" required>
+            </div>
+            <div class="form-group">
+                <label for="shora" class="form-label">Salario por Hora</label>
+                <input type="number" step="0.01" id="shora" name="shora" required>
+            </div>
+            <div class="form-group">
+                <label for="otros_descuentos1" class="form-label">Otros Descuentos 1</label>
+                <input type="number" step="0.01" id="otros_descuentos1" name="otros_descuentos1">
+            </div>
+            <div class="form-group">
+                <label for="otros_descuentos2" class="form-label">Otros Descuentos 2</label>
+                <input type="number" step="0.01" id="otros_descuentos2" name="otros_descuentos2">
+            </div>
+            <div class="form-group">
+                <label for="otros_descuentos3" class="form-label">Otros Descuentos 3</label>
+                <input type="number" step="0.01" id="otros_descuentos3" name="otros_descuentos3" onblur="calcularTotalDeducciones();">
+            </div>
+
+            <div class="form-group">
+                <label for="sbruto" class="form-label">Salario Bruto</label>
+                <input type="number" step="0.01" id="sbruto" name="sbruto" readonly>
+            </div>
+            <div class="form-group">
+                <label for="ssocial" class="form-label">Seguro Social</label>
+                <input type="number" step="0.01" id="ssocial" name="ssocial" readonly>
+            </div>
+            <div class="form-group">
+                <label for="seducativo" class="form-label">Seguro Educativo</label>
+                <input type="number" step="0.01" id="seducativo" name="seducativo" readonly>
+            </div>
+            <div class="form-group">
+                <label for="irenta" class="form-label">Impuesto sobre la Renta</label>
+                <input type="number" step="0.01" id="irenta" name="irenta" readonly>
+            </div>
+            <div class="form-group">
+                <label for="sneto" class="form-label">Sueldo Neto</label>
+                <input type="number" step="0.01" id="sneto" name="sneto" readonly>
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar</button>
+        </form>
+    </div>
+
+    <script src="validaciones.js"></script>
+</body>
+</html>
