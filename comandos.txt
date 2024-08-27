@@ -1,0 +1,121 @@
+Comandos de Git: Desde los más Básicos hasta los más Complejos
+
+1. git init:
+   - Inicializa un nuevo repositorio Git en el directorio actual.
+   - Ejemplo: git init
+
+2. git clone <url>:
+   - Clona un repositorio existente desde una URL a tu máquina local.
+   - Ejemplo: git clone https://github.com/user/repo.git
+
+3. git status:
+   - Muestra el estado actual del repositorio, incluyendo cambios en el área de trabajo y en el área de preparación.
+   - Ejemplo: git status
+
+4. git add <archivo>:
+   - Agrega un archivo específico al área de preparación.
+   - Ejemplo: git add archivo.txt
+
+5. git add .:
+   - Agrega todos los archivos modificados al área de preparación.
+   - Ejemplo: git add .
+
+6. git commit -m "mensaje":
+   - Realiza un commit de los cambios en el área de preparación con un mensaje descriptivo.
+   - Ejemplo: git commit -m "Agregar nueva funcionalidad"
+
+7. git log:
+   - Muestra el historial de commits del repositorio.
+   - Ejemplo: git log
+
+8. git diff:
+   - Muestra las diferencias entre los archivos modificados y los archivos en el último commit.
+   - Ejemplo: git diff
+
+9. git checkout <rama>:
+   - Cambia a una rama existente.
+   - Ejemplo: git checkout <nombre_de_la_rama>
+
+10. git branch:
+    - Lista todas las ramas locales en el repositorio.
+    - Ejemplo: git branch
+
+11. git branch <nombre>:
+    - Crea una nueva rama.
+    - Ejemplo: git branch <nombre_de_la_rama>
+
+12. git checkout -b <nombre>:
+    - Crea una nueva rama y cambia a ella inmediatamente.
+    - Ejemplo: git checkout -b <nombre_de_la_rama>
+
+13. git merge <rama>:
+    - Combina la rama especificada con la rama actual.
+    - Ejemplo: git merge <rama>
+
+14. git pull:
+    - Descarga cambios desde el repositorio remoto y los fusiona con la rama actual.
+    - Ejemplo: git pull
+
+15. git push:
+    - Sube los cambios locales al repositorio remoto.
+    - Ejemplo: git push
+
+16. git remote -v:
+    - Muestra las URLs del repositorio remoto.
+    - Ejemplo: git remote -v
+
+17. git remote add <nombre> <url>:
+    - Añade un nuevo repositorio remoto.
+    - Ejemplo: git remote add origin https://github.com/user/repo.git
+
+18. git fetch:
+    - Descarga los cambios del repositorio remoto pero no los fusiona.
+    - Ejemplo: git fetch
+
+19. git reset --hard <commit>:
+    - Restablece el estado del repositorio al commit especificado, eliminando todos los cambios posteriores.
+    - Ejemplo: git reset --hard <commit_id>
+
+20. git reset <archivo>:
+    - Saca un archivo del área de preparación.
+    - Ejemplo: git reset archivo.txt
+
+21. git rm <archivo>:
+    - Elimina un archivo del área de trabajo y del área de preparación.
+    - Ejemplo: git rm archivo.txt
+
+22. git stash:
+    - Guarda temporalmente los cambios no confirmados para limpiarlos del área de trabajo.
+    - Ejemplo: git stash
+
+23. git stash apply:
+    - Restaura los cambios guardados con `git stash`.
+    - Ejemplo: git stash apply
+
+24. git stash pop:
+    - Restaura los cambios guardados con `git stash` y los elimina del stash.
+    - Ejemplo: git stash pop
+
+25. git tag:
+    - Lista todas las etiquetas (tags) en el repositorio.
+    - Ejemplo: git tag
+
+26. git tag -a <nombre> -m "mensaje":
+    - Crea una nueva etiqueta anotada.
+    - Ejemplo: git tag -a v1.0 -m "Versión 1.0"
+
+27. git show <tag>:
+    - Muestra información sobre una etiqueta específica.
+    - Ejemplo: git show v1.0
+
+28. git cherry-pick <commit>:
+    - Aplica un commit específico en la rama actual.
+    - Ejemplo: git cherry-pick <commit_id>
+
+29. git rebase <rama>:
+    - Reaplica commits de la rama actual sobre otra rama.
+    - Ejemplo: git rebase <rama>
+
+30. git revert <commit>:
+    - Crea un nuevo commit que revierte los cambios de un commit anterior.
+    - Ejemplo: git revert <commit_id>
