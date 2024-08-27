@@ -50,25 +50,42 @@ document.addEventListener('DOMContentLoaded', function() {
 function calcularSalarios() {
     const horasTrabajadas = parseFloat(document.getElementById('htrabajadas').value) || 0;
     const salarioHora = parseFloat(document.getElementById('shora').value) || 0;
-    const otrosDescuentos1 = parseFloat(document.getElementById('otros_descuentos1').value) || 0;
-    const otrosDescuentos2 = parseFloat(document.getElementById('otros_descuentos2').value) || 0;
-    const otrosDescuentos3 = parseFloat(document.getElementById('otros_descuentos3').value) || 0;
 
     // Calcular salario bruto
     const salarioBruto = horasTrabajadas * salarioHora;
     document.getElementById('sbruto').value = salarioBruto.toFixed(2);
 
+    const otrosDescuentos1 = parseFloat(document.getElementById('otros_descuentos1').value) || 0;
+    const otrosDescuentos2 = parseFloat(document.getElementById('otros_descuentos2').value) || 0;
+    const otrosDescuentos3 = parseFloat(document.getElementById('otros_descuentos3').value) || 0;
+
+    // Validar que los otros descuentos no sean mayores al salario bruto
+    const totalOtrosDescuentos = otrosDescuentos1 + otrosDescuentos2 + otrosDescuentos3;
+    if (totalOtrosDescuentos > salarioBruto) {
+        alert("Los descuentos adicionales no pueden ser mayores al salario bruto.");
+        return;
+    }
+
     // Calcular deducciones
     const seguroSocial = salarioBruto * 0.0975; // 9.75% de seguro social
     const seguroEducativo = salarioBruto * 0.0125; // 1.25% de seguro educativo
-    const impuestoRenta = salarioBruto * 0.15; // 15% de impuesto sobre la renta
+
+    // Calcular impuesto sobre la renta basado en la ley panameña
+    let impuestoRenta = 0;
+    const salarioAnual = salarioBruto * 12;
+
+    if (salarioAnual > 11000 && salarioAnual <= 50000) {
+        impuestoRenta = (salarioAnual - 11000) * 0.15 / 12;
+    } else if (salarioAnual > 50000) {
+        impuestoRenta = ((50000 - 11000) * 0.15 + (salarioAnual - 50000) * 0.25) / 12;
+    }
 
     document.getElementById('ssocial').value = seguroSocial.toFixed(2);
     document.getElementById('seducativo').value = seguroEducativo.toFixed(2);
     document.getElementById('irenta').value = impuestoRenta.toFixed(2);
 
     // Calcular sueldo neto
-    const totalDeducciones = seguroSocial + seguroEducativo + impuestoRenta + otrosDescuentos1 + otrosDescuentos2 + otrosDescuentos3;
+    const totalDeducciones = seguroSocial + seguroEducativo + impuestoRenta + totalOtrosDescuentos;
     const sueldoNeto = salarioBruto - totalDeducciones;
     document.getElementById('sneto').value = sueldoNeto.toFixed(2);
 }
