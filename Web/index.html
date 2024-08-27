@@ -14,7 +14,7 @@
             <h3>Datos Generales</h3>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="prefijo" class="form-label">Prefijo</label>
+                    <label for="prefijo" class="form-label">Prefijo <span class="error">*</span> </label>
                     <select id="prefijo" name="prefijo" required>
                         <option value="" disabled selected>Seleccione</option>
                         <option value="1">1</option>
@@ -33,18 +33,18 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="tomo" class="form-label">Tomo</label>
+                    <label for="tomo" class="form-label">Tomo <span class="error">*</span></label>
                     <input type="text" id="tomo" name="tomo" required>
                 </div>
                 <div class="form-group">
-                    <label for="asiento" class="form-label">Asiento</label>
+                    <label for="asiento" class="form-label">Asiento <span class="error">*</span></label>
                     <input type="text" id="asiento" name="asiento" required pattern="[A-Za-z]+">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
-                    <label for="nombre1" class="form-label">Primer Nombre</label>
+                    <label for="nombre1" class="form-label">Primer Nombre <span class="error">*</span></label>
                     <input type="text" id="nombre1" name="nombre1" required style="text-transform: capitalize;">
                 </div>
                 <div class="form-group">
@@ -55,17 +55,17 @@
             
             <div class="form-row">
                 <div class="form-group">
-                    <label for="apellido1" class="form-label">Primer Apellido</label>
+                    <label for="apellido1" class="form-label">Primer Apellido <span class="error">*</span></label>
                     <input type="text" id="apellido1" name="apellido1"required style="text-transform: capitalize;">
                 </div>
                 <div class="form-group">
-                    <label for="apellido2" class="form-label">Segundo Apellido</label>
+                    <label for="apellido2" class="form-label">Segundo Apellido <span class="error">*</span></label>
                     <input type="text" id="apellido2" name="apellido2" style="text-transform: capitalize;">
                 </div>
             </div>
             
             <div class="form-group">
-                <label for="provincia" class="form-label">Provincia</label>
+                <label for="provincia" class="form-label">Provincia <span class="error">*</span></label>
                 <select id="provincia" name="provincia" required onchange="cargarDistritos();">
                     <option value="" disabled selected>Seleccione una provincia</option>
                     <option value="provincia1">Provincia 1</option>
@@ -74,26 +74,26 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="distrito" class="form-label">Distrito</label>
+                <label for="distrito" class="form-label">Distrito <span class="error">*</span></label>
                 <select id="distrito" name="distrito" required onchange="cargarCorregimientos();">
                     <option value="" disabled selected>Seleccione un distrito</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="corregimiento" class="form-label">Corregimiento</label>
+                <label for="corregimiento" class="form-label">Corregimiento <span class="error">*</span></label>
                 <select id="corregimiento" name="corregimiento" required>
                     <option value="" disabled selected>Seleccione un corregimiento</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="direccion" class="form-label">Dirección</label>
+                <label for="direccion" class="form-label">Dirección <span class="error">*</span></label>
                 <textarea id="direccion" name="direccion" rows="3" required></textarea>
             </div>
 
             <!-- Datos de Planilla -->
             <h3>Datos de Planilla</h3>
             <div class="form-group">
-                <label for="htrabajadas" class="form-label">Horas Trabajadas</label>
+                <label for="htrabajadas" class="form-label">Horas Trabajadas <span class="error">*</span></label>
                 <input type="number" id="htrabajadas" name="htrabajadas" required oninput="calcularSalarios();">
             </div>
             <div class="form-group">

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tomoInput = document.getElementById('tomo');
     const asientoInput = document.getElementById('asiento');
 
-    limitarC(tomoInput, 5);  
+    limitarC(tomoInput, 4);  
     limitarC(asientoInput, 5);  
     lim
 });
