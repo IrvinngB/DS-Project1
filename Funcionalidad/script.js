@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Cargar provincias al cargar la página
-    fetch('obtener_datos.php', {
+    fetch('../PHP/obtener_datos.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function cargarDistritos(codigoProvincia) {
     // Hacer la solicitud AJAX para obtener los distritos de la provincia seleccionada
-    fetch('obtener_datos.php', {
+    fetch('../PHP/obtener_datos.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -81,8 +81,7 @@ function cargarDistritos(codigoProvincia) {
 }
 
 function cargarCorregimientos(codigoDistrito) {
-    // Hacer la solicitud AJAX para obtener los corregimientos del distrito seleccionado
-    fetch('obtener_datos.php', {
+    fetch('../PHP/obtener_datos.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -110,7 +109,6 @@ function cargarCorregimientos(codigoDistrito) {
         });
     })
     .catch(error => {
-        console.error('Error al cargar los corregimientos:', error);
         alert('Hubo un problema al cargar los corregimientos. Por favor, inténtalo de nuevo más tarde.');
     });
 }

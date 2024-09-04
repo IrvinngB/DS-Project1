@@ -29,7 +29,6 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                         <option value="13">13</option>
-                        <option value="14">E</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -92,16 +91,16 @@
             <h3>Datos de Planilla</h3>
             <div class="form-group">
                 <label for="htrabajadas" class="form-label">Horas Trabajadas <span class="error">*</span></label>
-                <input type="number" id="htrabajadas" name="htrabajadas" required oninput="calcularSalarios();">
+                <input type="number" id="htrabajadas" min="1" name="htrabajadas" required oninput="calcularSalarios(); ">
             </div>
             <div class="form-group">
                 <label for="shora" class="form-label">Salario por Hora</label>
-                <input type="number" step="0.01" id="shora" name="shora" required oninput="calcularSalarios();">
+                <input type="number" step="0.01" min="0.1" id="shora" name="shora" required oninput="calcularSalarios();" >
             </div>
 
             <div class="form-group">
                 <label for="sbruto" class="form-label">Salario Bruto</label>
-                <input type="number" step="0.01" id="sbruto" name="sbruto" readonly>
+                <input type="number" step="0.01" min="0.1" id="sbruto" name="sbruto" readonly>
             </div>
             <div class="form-group">
                 <label for="ssocial" class="form-label">Seguro Social</label>
@@ -117,16 +116,16 @@
             </div>
             <div class="form-group">
                 <label for="otros_descuentos1" class="form-label">Otros Descuentos 1</label>
-                <input type="number" step="0.01" id="otros_descuentos1" name="otros_descuentos1" oninput="calcularSalarios();">
+                <input type="number" step="0.01" min="0" id="otros_descuentos1" name="otros_descuentos1" oninput="calcularSalarios();validarVPos(this);" onkeydown="evitarNegativos(event);">
             </div>
             
             <div class="form-group">
                 <label for="otros_descuentos2" class="form-label">Otros Descuentos 2</label>
-                <input type="number" step="0.01" id="otros_descuentos2" name="otros_descuentos2" oninput="calcularSalarios();">
+                <input type="number" step="0.01" min="0" id="otros_descuentos2" name="otros_descuentos2" oninput="calcularSalarios();validarVPos(this);" onkeydown="evitarNegativos(event);">
             </div>
             <div class="form-group">
                 <label for="otros_descuentos3" class="form-label">Otros Descuentos 3</label>
-                <input type="number" step="0.01" id="otros_descuentos3" name="otros_descuentos3" oninput="calcularSalarios();" onblur="calcularTotalDeducciones();">
+                <input type="number" step="0.01" min="0" id="otros_descuentos3" name="otros_descuentos3" oninput="calcularSalarios();validarVPos(this);" onblur="calcularTotalDeducciones();" onkeydown="evitarNegativos(event);">
             </div>
 
             <div class="form-group">
@@ -139,7 +138,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="validaciones.js"></script>
-    <script src="script.js"></script>
+    <script src="../Funcionalidad/validaciones.js"></script>
+    <script src="../Funcionalidad/script.js"></script>
 </body>
 </html>

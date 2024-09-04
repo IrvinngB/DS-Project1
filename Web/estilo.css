@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0b3c9158; /* Azul Oscuro */
+    background-color: #e1eef6; /* Azul Pastel Claro */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,10 +11,10 @@ body {
 }
 
 .container {
-    background-color: #1a1f36; /* Azul Marino Oscuro */
+    background-color: #f0f8fc; /* Azul Pastel Suave */
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 500px;
     margin: auto;
@@ -24,15 +24,15 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 24px;
-    color: #e1eff6; /* Blanco Suave */
+    color: #5a6f7b; /* Azul Grisáceo Pastel */
 }
 
 h3 {
     margin-top: 30px;
     margin-bottom: 20px;
     font-size: 18px;
-    color: #a9c4d4; /* Turquesa Suave */
-    border-bottom: 2px solid #e76f51; /* Coral */
+    color: #8aa4b0; /* Azul Suave Pastel */
+    border-bottom: 2px solid #b3d7e6; /* Azul Menta Pastel */
     padding-bottom: 10px;
 }
 
@@ -50,7 +50,7 @@ h3 {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #a9c4d4; /* Turquesa Suave */
+    color: #8aa4b0; /* Azul Suave Pastel */
 }
 
 input[type="text"],
@@ -59,21 +59,22 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #4a648c; /* Azul Grisáceo */
+    border: 1px solid #b3d7e6; /* Azul Menta Pastel */
     border-radius: 6px;
     box-sizing: border-box;
     font-size: 15px;
-    background-color: #1e2a4a; /* Azul Marino Más Oscuro */
-    color: #e1eff6; /* Blanco Suave */
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #eaf2f7; /* Blanco Azul Suave */
+    color: #5a6f7b; /* Azul Grisáceo Pastel */
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #4fd1c5; /* Verde Turquesa */
-    box-shadow: 0 0 0 0.2rem rgba(79, 209, 197, 0.25);
+    border-color: #91bdd8; /* Azul Pastel Brillante */
+    background-color: #d9eaf1; /* Azul Pastel Luminoso */
+    box-shadow: 0 0 0 0.2rem rgba(145, 189, 216, 0.25);
     outline: none;
 }
 
@@ -84,10 +85,10 @@ textarea {
 .btn-submit {
     width: 100%;
     padding: 12px;
-    background-color: #4fd1c5; /* Verde Turquesa */
+    background-color: #b3d7e6; /* Azul Menta Pastel */
     border: none;
     border-radius: 6px;
-    color: #1a1f36; /* Azul Marino Oscuro */
+    color: #ffffff; /* Blanco */
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -96,19 +97,19 @@ textarea {
 }
 
 .btn-submit:hover {
-    background-color: #2b7a78; /* Verde Marino Oscuro */
-    box-shadow: 0 4px 10px rgba(43, 122, 120, 0.2);
+    background-color: #91bdd8; /* Azul Pastel Oscuro */
+    box-shadow: 0 4px 10px rgba(145, 189, 216, 0.2);
 }
 
 .btn-submit:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(79, 209, 197, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(145, 189, 216, 0.25);
 }
 
 input[type="text"]::placeholder,
 input[type="number"]::placeholder,
 textarea::placeholder {
-    color: #72849a; /* Gris Azulado */
+    color: #97a9b6; /* Azul Pastel Deslavado */
     opacity: 1; 
 }
 
@@ -137,7 +138,7 @@ textarea::placeholder {
 }
 
 .error {
-    color: #e76f51; /* Coral */
+    color: #b3d7e6; /* Azul Menta Pastel */
     font-size: 14px;
     margin-top: 5px;
 }

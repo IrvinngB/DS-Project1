@@ -2,7 +2,7 @@
 function limitarC(input, maxLength) {
     input.addEventListener('input', function() {
         // Remueve todos los caracteres que no sean números
-        this.value = this.value.replace(/\D/g, '');
+        this.value = this.value.replace(/[-\D]/g, '');
 
         // Limita la longitud del campo al valor especificado
         if (this.value.length > maxLength) {
@@ -11,19 +11,10 @@ function limitarC(input, maxLength) {
     });
 }
 
-// Aplicar la función a los campos que necesiten la validación
-document.addEventListener('DOMContentLoaded', function() {
-    const tomoInput = document.getElementById('tomo');
-    const asientoInput = document.getElementById('asiento');
-
-    limitarC(tomoInput, 4);  
-    limitarC(asientoInput, 5);  
-});
-
-
+// Función para validar nombres y apellidos (solo letras)
 function ValidadNombres(input, maxLength) {
     input.addEventListener('input', function() {
-        // Remueve todos los caracteres que no sean números
+        // Remueve todos los caracteres que no sean letras
         this.value = this.value.replace(/\d/g, '');
 
         // Limita la longitud del campo al valor especificado
@@ -33,19 +24,7 @@ function ValidadNombres(input, maxLength) {
     });
 }
 
-// Aplicar la función a los campos que necesiten la validación
-document.addEventListener('DOMContentLoaded', function() {
-    const nombre1Input = document.getElementById('nombre1');
-    const apellido1Input = document.getElementById('apellido1');
-    const nombre2Input = document.getElementById('nombre2');
-    const apellido2Input = document.getElementById('apellido2');
-
-    ValidadNombres(nombre1Input, 30);  
-    ValidadNombres(apellido1Input, 30);  
-    ValidadNombres(nombre2Input, 30);  
-    ValidadNombres(apellido2Input, 30);  
-});
-
+// Función para calcular salarios
 function calcularSalarios() {
     const horasTrabajadas = parseFloat(document.getElementById('htrabajadas').value) || 0;
     const salarioHora = parseFloat(document.getElementById('shora').value) || 0;
@@ -60,7 +39,7 @@ function calcularSalarios() {
 
     // Validar que los otros descuentos no sean mayores al salario bruto
     const totalOtrosDescuentos = otrosDescuentos1 + otrosDescuentos2 + otrosDescuentos3;
-    if (totalOtrosDescuentos > salarioBruto) {
+    if (totalOtrosDescuentos > salarioBruto && totalOtrosDescuentos > 0) {
         alert("Los descuentos adicionales no pueden ser mayores al salario bruto.");
         return;
     }
@@ -88,3 +67,35 @@ function calcularSalarios() {
     const sueldoNeto = salarioBruto - totalDeducciones;
     document.getElementById('sneto').value = sueldoNeto.toFixed(2);
 }
+
+// Función para evitar la entrada de valores negativos
+function validarIM(event) {
+    const key = event.key;
+    // Permitir solo números, punto decimal, y teclas de control (como retroceso)
+    if (!/[\d.]/.test(key) && key !== 'Backspace' && key !== 'Delete' || key === '-') {
+        this.value = this.value.replace(/[-\D]/g, '');
+    }
+}
+
+// Aplicar las validaciones cuando el contenido esté cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // Validación de campos numéricos
+    const tomoInput = document.getElementById('tomo');
+    const asientoInput = document.getElementById('asiento');
+    limitarC(tomoInput, 4);
+    limitarC(asientoInput, 5);
+
+    // Validación de nombres y apellidos
+    const nombre1Input = document.getElementById('nombre1');
+    const apellido1Input = document.getElementById('apellido1');
+    const nombre2Input = document.getElementById('nombre2');
+    const apellido2Input = document.getElementById('apellido2');
+    ValidadNombres(nombre1Input, 30);
+    ValidadNombres(apellido1Input, 30);
+    ValidadNombres(nombre2Input, 30);
+    ValidadNombres(apellido2Input, 30);
+
+     const salarioInput = document.getElementById('htrabajadas');
+    salarioInput.addEventListener('keydown', validarIM);
+
+});
