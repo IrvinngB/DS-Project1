@@ -30,7 +30,7 @@ $cedula = concatenarTomoAsientoPrefijo($tomo, $asiento, $prefijo);
 
 // Función para concatenar los valores
 function concatenarTomoAsientoPrefijo($tomo, $asiento, $prefijo) {
-    return $tomo . '-' . $asiento . '-' . $prefijo; // Puedes cambiar el separador '-' si deseas otro formato
+    return $tomo . '-' . $asiento . '-' . $prefijo;
 }
 
 // Preparar la declaración
@@ -63,7 +63,10 @@ $stmt->bind_param("sssssssssssiddddddddd",
 
 // Ejecutar la declaración
 if ($stmt->execute()) {
-    echo "Datos guardados exitosamente";
+    echo "<script>
+        alert('Los datos se enviaron correctamente ✔');
+         window.location.href = '../Web/index.html';
+    </script>";
 } else {
     echo "Error: " . $stmt->error;
 }
