@@ -4,10 +4,12 @@ function limitarC(input, maxLength) {
         // Remueve todos los caracteres que no sean números
         this.value = this.value.replace(/[-\D]/g, '');
 
+        this.value = this.value.replace(/\s{2,}/g, ' ');
         // Limita la longitud del campo al valor especificado
         if (this.value.length > maxLength) {
             this.value = this.value.slice(0, maxLength);
         }
+
     });
 }
 
@@ -17,6 +19,7 @@ function ValidadNombres(input, maxLength) {
         // Remueve todos los caracteres que no sean letras
         this.value = this.value.replace(/\d/g, '');
 
+          this.value = this.value.replace(/\s{2,}/g, ' ');
         // Limita la longitud del campo al valor especificado
         if (this.value.length > maxLength) {
             this.value = this.value.slice(0, maxLength);
@@ -71,14 +74,35 @@ function calcularSalarios() {
 // Función para evitar la entrada de valores negativos
 function validarIM(event) {
     const key = event.key;
-    // Permitir solo números, punto decimal, y teclas de control (como retroceso)
-    if (!/[\d.]/.test(key) && key !== 'Backspace' && key !== 'Delete' || key === '-') {
-        this.value = this.value.replace(/[-\D]/g, '');
+    const isControlKey = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'].includes(key);
+
+    // Permitir sólo números, punto decimal, y teclas de control (como retroceso, flechas, etc.)
+    if (!/[\d.]/.test(key) && !isControlKey) {
+        event.preventDefault();
+    }
+
+    // Evitar más de un punto decimal
+    if (key === '.' && event.target.value.includes('.')) {
+        event.preventDefault();
     }
 }
 
+
 // Aplicar las validaciones cuando el contenido esté cargado
 document.addEventListener('DOMContentLoaded', function() {
+    // Aplicar la validación en los campos de salario y descuentos
+    const inputsMonetarios = [
+        document.getElementById('htrabajadas'),
+        document.getElementById('shora'),
+        document.getElementById('otros_descuentos1'),
+        document.getElementById('otros_descuentos2'),
+        document.getElementById('otros_descuentos3')
+    ];
+
+    inputsMonetarios.forEach(input => {
+        input.addEventListener('keydown', validarIM);
+    });
+
     // Validación de campos numéricos
     const tomoInput = document.getElementById('tomo');
     const asientoInput = document.getElementById('asiento');
@@ -94,8 +118,5 @@ document.addEventListener('DOMContentLoaded', function() {
     ValidadNombres(apellido1Input, 30);
     ValidadNombres(nombre2Input, 30);
     ValidadNombres(apellido2Input, 30);
-
-     const salarioInput = document.getElementById('htrabajadas');
-    salarioInput.addEventListener('keydown', validarIM);
-
 });
+

@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Formulario de Planilla</h1>
-        <form id="planillaForm" action="procesar_planilla.php" method="POST" onsubmit="return validarFormulario();">
+        <form id="planillaForm" action="../PHP/procesar_datos.php" method="POST" onsubmit="return validarFormulario();">
             <!-- Datos Generales -->
             <h3>Datos Generales</h3>
             <div class="form-row">
@@ -51,7 +51,7 @@
                     <input type="text" id="nombre2" name="nombre2" style="text-transform: capitalize;">
                 </div>
             </div>
-            
+
             <div class="form-row">
                 <div class="form-group">
                     <label for="apellido1" class="form-label">Primer Apellido <span class="error">*</span></label>
@@ -62,7 +62,7 @@
                     <input type="text" id="apellido2" name="apellido2" style="text-transform: capitalize;">
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label for="provincia" class="form-label">Provincia <span class="error">*</span></label>
                 <select id="provincia" name="provincia" required>
@@ -81,10 +81,6 @@
                 <select id="corregimiento" name="corregimiento" required>
                     <option value="" disabled selected>Seleccione un corregimiento</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="direccion" class="form-label">Dirección <span class="error">*</span></label>
-                <textarea id="direccion" name="direccion" rows="3" required></textarea>
             </div>
 
             <!-- Datos de Planilla -->
@@ -118,7 +114,7 @@
                 <label for="otros_descuentos1" class="form-label">Otros Descuentos 1</label>
                 <input type="number" step="0.01" min="0" id="otros_descuentos1" name="otros_descuentos1" oninput="calcularSalarios();validarVPos(this);" onkeydown="evitarNegativos(event);">
             </div>
-            
+
             <div class="form-group">
                 <label for="otros_descuentos2" class="form-label">Otros Descuentos 2</label>
                 <input type="number" step="0.01" min="0" id="otros_descuentos2" name="otros_descuentos2" oninput="calcularSalarios();validarVPos(this);" onkeydown="evitarNegativos(event);">
