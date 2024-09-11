@@ -30,7 +30,7 @@ $cedula = concatenarTomoAsientoPrefijo($tomo, $asiento, $prefijo);
 
 // Función para concatenar los valores
 function concatenarTomoAsientoPrefijo($tomo, $asiento, $prefijo) {
-    return $tomo . '-' . $asiento . '-' . $prefijo;
+    return $prefijo . '-' . $tomo . '-' . $asiento;
 }
 
 // Preparar la declaración
