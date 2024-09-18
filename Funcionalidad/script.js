@@ -112,3 +112,6 @@ function cargarCorregimientos(codigoDistrito) {
         alert('Hubo un problema al cargar los corregimientos. Por favor, inténtalo de nuevo más tarde.');
     });
 }
+
+
+

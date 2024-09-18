@@ -25,7 +25,7 @@ $otrosDescuentos2 = $_POST['otros_descuentos2'];
 $otrosDescuentos3 = $_POST['otros_descuentos3'];
 $sueldoNeto = $_POST['sneto'];
 
-// Concatenar el tomo, asiento y prefijo
+// Concatenar el tomo, asiento y prefijo para generar la cédula
 $cedula = concatenar($tomo, $asiento, $prefijo);
 
 // Función para concatenar los valores
@@ -33,15 +33,47 @@ function concatenar($tomo, $asiento, $prefijo) {
     return $prefijo . '-' . $tomo . '-' . $asiento;
 }
 
-// Preparar la declaración
-$stmt = $conn->prepare("INSERT INTO planilla (prefijo,tomo,asiento,cedula,nombre1,nombre2,apellido1,apellido2,provincia,distrito,corregimiento,htrabajadas,shora,sbruto,ssocial,seducativo,irenta,descuento1,descuento2,descuento3,sneto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+// Preparar la declaración SQL para actualizar los datos
+$stmt = $conn->prepare("UPDATE planilla SET 
+    nombre1 = ?, 
+    nombre2 = ?, 
+    apellido1 = ?, 
+    apellido2 = ?, 
+    provincia = ?, 
+    distrito = ?, 
+    corregimiento = ?, 
+    htrabajadas = ?, 
+    shora = ?, 
+    sbruto = ?, 
+    ssocial = ?, 
+    seducativo = ?, 
+    irenta = ?, 
+    descuento1 = ?, 
+    descuento2 = ?, 
+    descuento3 = ?, 
+    sneto = ? 
+    WHERE prefijo = ? AND tomo = ? AND asiento = ?");
 
-// Vincular los parámetros
-$stmt->bind_param("sssssssssssiddddddddd",
-    $prefijo,
-    $tomo,
-    $asiento,
-    $cedula,
+// Vincular los parámetros para la declaración SQL
+$nombre1 = $nombre1 ?: '';
+$nombre2 = $nombre2 ?: '';
+$apellido1 = $apellido1 ?: '';
+$apellido2 = $apellido2 ?: '';
+$provincia = $provincia ?: '';
+$distrito = $distrito ?: '';
+$corregimiento = $corregimiento ?: '';
+$horasTrabajadas = $horasTrabajadas ?: 0;
+$salarioHora = $salarioHora ?: 0;
+$salarioBruto = $salarioBruto ?: 0;
+$seguroSocial = $seguroSocial ?: 0;
+$seguroEducativo = $seguroEducativo ?: 0;
+$impuestoRenta = $impuestoRenta ?: 0;
+$otrosDescuentos1 = $otrosDescuentos1 ?: 0;
+$otrosDescuentos2 = $otrosDescuentos2 ?: 0;
+$otrosDescuentos3 = $otrosDescuentos3 ?: 0;
+$sueldoNeto = $sueldoNeto ?: 0;
+
+$stmt->bind_param("ssssssidddddddddsssd",
     $nombre1,
     $nombre2,
     $apellido1,
@@ -58,7 +90,10 @@ $stmt->bind_param("sssssssssssiddddddddd",
     $otrosDescuentos1,
     $otrosDescuentos2,
     $otrosDescuentos3,
-    $sueldoNeto
+    $sueldoNeto,
+    $prefijo,
+    $tomo,
+    $asiento
 );
 
 // Ejecutar la declaración
@@ -68,7 +103,8 @@ if ($stmt->execute()) {
          window.location.href = '../Web/index.html';
     </script>";
 } else {
-    echo "Error: " . $stmt->error;
+    $response = array('success' => false, 'message' => 'Error: ' . $stmt->error);
+    echo json_encode($response);
 }
 
 $stmt->close();

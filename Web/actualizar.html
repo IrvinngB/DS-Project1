@@ -11,18 +11,18 @@
     
         <nav class="menu">
             <ul>
-                <li><a href="index.html" style="color: rgba(247, 100, 42, 0.651);">Ingresar</a></li>
+                <li><a href="index.html">Ingresar</a></li>
                 <li><a href="consultar.html">Consultar</a></li>
                 <li><a href="eliminar.html">Eliminar</a></li>
-                <li><a href="actualizar.html">Actualizar</a></li>
+                <li><a href="actualizar.html" style="color: rgba(247, 100, 42, 0.651);">Actualizar</a></li>
             </ul>
         </nav>
     
 
     <div class="container">
-        <h1>Formulario de Planilla</h1>
+        <h1>Actualizar Registro</h1>
 
-        <form id="planillaForm" action="../PHP/procesar_datos.php" method="POST" onsubmit="return validarFormulario();">
+        <form id="planillaForm" action="../PHP/actualizar.php" method="POST" onsubmit="return validarFormulario();">
             <!-- Datos Generales -->
             <h3>Datos Generales</h3>
             <div class="form-row">
@@ -144,13 +144,13 @@
 
             
             <!-- Botón para guardar datos -->
-            <button type="submit" class="btn-submit">Guardar</button>
+            <button type="submit" class="btn-actualizar">Actualizar</button>
         </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../Funcionalidad/validaciones.js"></script>
     <script src="../Funcionalidad/script.js"></script>
-    <script src="../Funcionalidad/CRUD.js"></script>
+    <script src="../Funcionalidad/Cedula,js"></script>
 </body>
 </html>

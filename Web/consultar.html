@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Consultar Datos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Ingresar</a></li>
+            <li><a href="consultar.html" style="color: rgba(247, 100, 42, 0.651);" >Consultar</a></li>
+            <li><a href="eliminar.html">Eliminar</a></li>
+            <li><a href="actualizar.html">Actualizar</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Consultar Registro</h1>
+        <form id="consultaForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="prefijo" class="form-label">Prefijo <span class="error">*</span></label>
+                    <select id="prefijo" name="prefijo" required>
+                        <option value="" disabled selected>Seleccione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tomo" class="form-label">Tomo <span class="error">*</span></label>
+                    <input type="number" id="tomo" name="tomo" required>
+                </div>
+                <div class="form-group">
+                    <label for="asiento" class="form-label">Asiento <span class="error">*</span></label>
+                    <input type="number" id="asiento" name="asiento" required>
+                </div>
+            </div>
+
+            <button type="button" class="btn-consultar" onclick="consultarDatos();">Consultar</button>
+        </form>
+        
+        <div id="resultados" class="resultados-container">
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../Funcionalidad/Cedula,js"></script>
+    <script src="../Funcionalidad/consulta.js"></script> 
+
+</body>
+</html>

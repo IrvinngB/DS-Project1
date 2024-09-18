@@ -4,7 +4,7 @@ body {
     background-color: #e1eef6; /* Azul Pastel Claro */
     margin: 0;
     padding: 0;
-    display: flex;
+
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -142,3 +142,173 @@ textarea::placeholder {
     font-size: 14px;
     margin-top: 5px;
 }
+
+
+.btn-eliminar {
+    width: 100%;
+    padding: 12px;
+    background-color: #f6b3b3; /* Rojo Pastel */
+    border: none;
+    border-radius: 6px;
+    color: #ffffff; /* Blanco */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+.btn-eliminar:hover {
+    background-color: #f58c8c; /* Rojo Pastel Oscuro */
+    box-shadow: 0 4px 10px rgba(245, 140, 140, 0.2);
+}
+
+.btn-eliminar:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(245, 140, 140, 0.25);
+}
+
+
+.btn-actualizar {
+    width: 100%;
+    padding: 12px;
+    background-color: #b3f6b3; /* Verde Pastel */
+    border: none;
+    border-radius: 6px;
+    color: #ffffff; /* Blanco */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+.btn-actualizar:hover {
+    background-color: #8cf58c; /* Verde Pastel Oscuro */
+    box-shadow: 0 4px 10px rgba(140, 245, 140, 0.2);
+}
+
+.btn-actualizar:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(140, 245, 140, 0.25);
+}
+
+
+/* Estilos de la tabla */
+
+
+.btn-consultar {
+    width: 100%;
+    padding: 12px;
+    background-color: #dfb3f6; /* Verde Pastel */
+    border: none;
+    border-radius: 6px;
+    color: #ffffff; /* Blanco */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+.btn-consultar:hover {
+    background-color: #dfb3f6; /* Verde Pastel Oscuro */
+    box-shadow: 0 4px 10px rgba(226, 140, 245, 0.2);
+}
+
+.btn-consultar:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(226, 140, 245, 0.2);
+}
+
+
+/* Estilos del menú de navegación */
+.menu {
+    background-color: #f0f8fc; /* Azul Pastel Suave */
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    margin-bottom: 20px; /* Espacio debajo del menú para separarlo del contenido */
+    border-radius: 8px; /* Bordes redondeados para que el menú se vea suave */
+    position: relative; /* Posicionamiento normal relativo al flujo de la página */
+    top: 0; /* Alinea el menú con la parte superior del documento */
+    left: 0;
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu ul li {
+    margin: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #5a6f7b; /* Azul Grisáceo Pastel */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.menu ul li a:hover {
+    background-color: #b3d7e6; /* Azul Menta Pastel */
+    color: #ffffff;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 576px) {
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu ul li a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Estilos para la tabla de resultados en formato vertical */
+.resultados-vertical {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f0f8fc; /* Fondo suave */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.resultados-vertical th, .resultados-vertical td {
+    padding: 12px 15px;
+    text-align: left;
+    color: #5a6f7b; /* Azul grisáceo pastel */
+    border-bottom: 1px solid #b3d7e6; /* Línea inferior de celdas */
+}
+
+.resultados-vertical th {
+    background-color: #b3d7e6; /* Azul menta pastel */
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 30%; /* Ajusta el ancho de las celdas de encabezado */
+}
+
+.resultados-vertical tr:nth-child(even) {
+    background-color: #eaf2f7; /* Alternancia de color de filas */
+}
+
+.resultados-vertical tr:hover {
+    background-color: #d9eaf1; /* Resaltado de fila al pasar el ratón */
+}
+
