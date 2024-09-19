@@ -1,5 +1,5 @@
 <?php
-include 'funciones.php'; // Incluir el archivo que contiene las funciones
+include 'funciones.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $accion = $_POST['accion'] ?? null;
@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Content-Type: application/json');
         echo json_encode($corregimientos);
     } else {
-        http_response_code(400); // Código de respuesta de solicitud incorrecta
+        http_response_code(400); 
         echo json_encode(["error" => "Acción no válida o parámetros faltantes"]);
     }
 } else {
-    http_response_code(405); // Código de respuesta de método no permitido
+    http_response_code(405); 
     echo json_encode(["error" => "Método no permitido"]);
 }
 ?>

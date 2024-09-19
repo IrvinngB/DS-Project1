@@ -16,10 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
         const selectProvincia = document.getElementById('provincia');
         
-        // Limpiar cualquier opción existente en el select de provincias
+        
         selectProvincia.innerHTML = '<option value="" disabled selected>Seleccione una provincia</option>';
 
-        // Recorrer los datos recibidos y crear opciones para el select de provincias
         data.forEach(provincia => {
             let option = document.createElement('option');
             option.value = provincia.codigo_provincia;
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
             selectProvincia.appendChild(option);
         });
 
-        // Agregar un evento para cargar distritos cuando se seleccione una provincia
         selectProvincia.addEventListener('change', function() {
             const codigoProvincia = this.value;
             cargarDistritos(codigoProvincia);
@@ -40,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function cargarDistritos(codigoProvincia) {
-    // Hacer la solicitud AJAX para obtener los distritos de la provincia seleccionada
+   
     fetch('../PHP/obtener_datos.php', {
         method: 'POST',
         headers: {
@@ -57,10 +55,10 @@ function cargarDistritos(codigoProvincia) {
     .then(data => {
         const selectDistrito = document.getElementById('distrito');
         
-        // Limpiar cualquier opción existente en el select de distritos
+       
         selectDistrito.innerHTML = '<option value="" disabled selected>Seleccione un distrito</option>';
 
-        // Recorrer los datos recibidos y crear opciones para el select de distritos
+       
         data.forEach(distrito => {
             let option = document.createElement('option');
             option.value = distrito.codigo_distrito;
@@ -97,7 +95,7 @@ function cargarCorregimientos(codigoDistrito) {
     .then(data => {
         const selectCorregimiento = document.getElementById('corregimiento');
         
-        // Limpiar cualquier opción existente en el select de corregimientos
+       
         selectCorregimiento.innerHTML = '<option value="" disabled selected>Seleccione un corregimiento</option>';
 
         // Recorrer los datos recibidos y crear opciones para el select de corregimientos

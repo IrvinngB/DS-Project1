@@ -1,7 +1,7 @@
 <?php
-// Incluir el archivo de conexión
+
 global $conn;
-include 'conexion.php'; // Asegúrate de que la ruta al archivo de conexión sea correcta
+include 'conexion.php'; 
 
 // Capturar los datos del formulario usando el método POST
 $prefijo = $_POST['prefijo'];
@@ -25,10 +25,10 @@ $otrosDescuentos2 = $_POST['otros_descuentos2'];
 $otrosDescuentos3 = $_POST['otros_descuentos3'];
 $sueldoNeto = $_POST['sneto'];
 
-// Concatenar el tomo, asiento y prefijo
+
 $cedula = concatenar($tomo, $asiento, $prefijo);
 
-// Función para concatenar los valores
+
 function concatenar($tomo, $asiento, $prefijo) {
     return $prefijo . '-' . $tomo . '-' . $asiento;
 }
@@ -61,7 +61,7 @@ $stmt->bind_param("sssssssssssiddddddddd",
     $sueldoNeto
 );
 
-// Ejecutar la declaración
+
 if ($stmt->execute()) {
     echo "<script>
         alert('Los datos se enviaron correctamente ✔');

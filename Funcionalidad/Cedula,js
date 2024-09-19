@@ -1,23 +1,20 @@
 // Función para limitar la cantidad de caracteres y permitir solo números
 function limitarNumeros(input, maxLength) {
     input.addEventListener('input', function() {
-        // Remueve todos los caracteres que no sean números
+      
         this.value = this.value.replace(/[-\D]/g, '');
 
-        // Limita la longitud del campo al valor especificado
         if (this.value.length > maxLength) {
             this.value = this.value.slice(0, maxLength);
         }
     });
 }
 
-// Aplicar las validaciones cuando el contenido esté cargado
 document.addEventListener('DOMContentLoaded', function() {
-    // Aplicar validación para limitar caracteres a los campos de tomo y asiento
+    
     const tomoInput = document.getElementById('tomo');
     const asientoInput = document.getElementById('asiento');
     
-    // Limitar a 4 caracteres el tomo y 5 caracteres el asiento
     limitarNumeros(tomoInput, 4);
     limitarNumeros(asientoInput, 5);
 });

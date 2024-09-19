@@ -1,18 +1,17 @@
 function consultarDatos() {
-    // Obtener los datos del formulario
     var prefijo = $('#prefijo').val();
     var tomo = $('#tomo').val();
     var asiento = $('#asiento').val();
 
-    // Validar los campos requeridos
+    console.log("Prefijo:", prefijo, "Tomo:", tomo, "Asiento:", asiento); // Verificar datos
+
     if (!prefijo || !tomo || !asiento) {
         alert("Por favor, complete todos los campos.");
         return;
     }
 
-    // Realizar la solicitud AJAX
     $.ajax({
-        url: '../PHP/consultar.php', // URL del archivo PHP
+        url: '../PHP/consultar.php',
         type: 'POST',
         data: {
             prefijo: prefijo,
@@ -20,7 +19,6 @@ function consultarDatos() {
             asiento: asiento
         },
         success: function(response) {
-            // Mostrar los resultados en el contenedor de resultados
             $('#resultados').html(response);
         },
         error: function(xhr, status, error) {

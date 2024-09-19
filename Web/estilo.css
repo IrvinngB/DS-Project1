@@ -1,17 +1,15 @@
-/* Estilos generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e1eef6; /* Azul Pastel Claro */
+    background-color: #e1eef6;
     margin: 0;
     padding: 0;
-
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
 .container {
-    background-color: #f0f8fc; /* Azul Pastel Suave */
+    background-color: #f0f8fc;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -24,15 +22,15 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 24px;
-    color: #5a6f7b; /* Azul Grisáceo Pastel */
+    color: #5a6f7b;
 }
 
 h3 {
     margin-top: 30px;
     margin-bottom: 20px;
     font-size: 18px;
-    color: #8aa4b0; /* Azul Suave Pastel */
-    border-bottom: 2px solid #b3d7e6; /* Azul Menta Pastel */
+    color: #8aa4b0;
+    border-bottom: 2px solid #b3d7e6;
     padding-bottom: 10px;
 }
 
@@ -50,7 +48,7 @@ h3 {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #8aa4b0; /* Azul Suave Pastel */
+    color: #8aa4b0;
 }
 
 input[type="text"],
@@ -59,12 +57,12 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #b3d7e6; /* Azul Menta Pastel */
+    border: 1px solid #b3d7e6;
     border-radius: 6px;
     box-sizing: border-box;
     font-size: 15px;
-    background-color: #eaf2f7; /* Blanco Azul Suave */
-    color: #5a6f7b; /* Azul Grisáceo Pastel */
+    background-color: #eaf2f7;
+    color: #5a6f7b;
     transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
@@ -72,8 +70,8 @@ input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #91bdd8; /* Azul Pastel Brillante */
-    background-color: #d9eaf1; /* Azul Pastel Luminoso */
+    border-color: #91bdd8;
+    background-color: #d9eaf1;
     box-shadow: 0 0 0 0.2rem rgba(145, 189, 216, 0.25);
     outline: none;
 }
@@ -85,10 +83,10 @@ textarea {
 .btn-submit {
     width: 100%;
     padding: 12px;
-    background-color: #b3d7e6; /* Azul Menta Pastel */
+    background-color: #b3d7e6;
     border: none;
     border-radius: 6px;
-    color: #ffffff; /* Blanco */
+    color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -97,7 +95,7 @@ textarea {
 }
 
 .btn-submit:hover {
-    background-color: #91bdd8; /* Azul Pastel Oscuro */
+    background-color: #91bdd8;
     box-shadow: 0 4px 10px rgba(145, 189, 216, 0.2);
 }
 
@@ -109,7 +107,7 @@ textarea {
 input[type="text"]::placeholder,
 input[type="number"]::placeholder,
 textarea::placeholder {
-    color: #97a9b6; /* Azul Pastel Deslavado */
+    color: #97a9b6;
     opacity: 1; 
 }
 
@@ -138,19 +136,18 @@ textarea::placeholder {
 }
 
 .error {
-    color: #b3d7e6; /* Azul Menta Pastel */
+    color: #b3d7e6;
     font-size: 14px;
     margin-top: 5px;
 }
 
-
 .btn-eliminar {
     width: 100%;
     padding: 12px;
-    background-color: #f6b3b3; /* Rojo Pastel */
+    background-color: #f6b3b3;
     border: none;
     border-radius: 6px;
-    color: #ffffff; /* Blanco */
+    color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -159,7 +156,7 @@ textarea::placeholder {
 }
 
 .btn-eliminar:hover {
-    background-color: #f58c8c; /* Rojo Pastel Oscuro */
+    background-color: #f58c8c;
     box-shadow: 0 4px 10px rgba(245, 140, 140, 0.2);
 }
 
@@ -168,14 +165,13 @@ textarea::placeholder {
     box-shadow: 0 0 0 0.2rem rgba(245, 140, 140, 0.25);
 }
 
-
 .btn-actualizar {
     width: 100%;
     padding: 12px;
-    background-color: #b3f6b3; /* Verde Pastel */
+    background-color: #b3f6b3;
     border: none;
     border-radius: 6px;
-    color: #ffffff; /* Blanco */
+    color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -184,7 +180,7 @@ textarea::placeholder {
 }
 
 .btn-actualizar:hover {
-    background-color: #8cf58c; /* Verde Pastel Oscuro */
+    background-color: #8cf58c;
     box-shadow: 0 4px 10px rgba(140, 245, 140, 0.2);
 }
 
@@ -193,8 +189,93 @@ textarea::placeholder {
     box-shadow: 0 0 0 0.2rem rgba(140, 245, 140, 0.25);
 }
 
+.menu {
+    background-color: #f0f8fc;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    margin-bottom: 20px; 
+    border-radius: 8px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 
-/* Estilos de la tabla */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu ul li {
+    margin: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #5a6f7b;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.menu ul li a:hover {
+    background-color: #b3d7e6;
+    color: #ffffff;
+}
+
+@media (max-width: 576px) {
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu ul li a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+.resultados-vertical {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f0f8fc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.resultados-vertical th, .resultados-vertical td {
+    padding: 12px 15px;
+    text-align: left;
+    color: #5a6f7b;
+    border-bottom: 1px solid #b3d7e6;
+}
+
+.resultados-vertical th {
+    background-color: #b3d7e6;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 30%;
+}
+
+.resultados-vertical tr:nth-child(even) {
+    background-color: #eaf2f7;
+}
+
+.resultados-vertical tr:hover {
+    background-color: #d9eaf1;
+}
+
 
 
 .btn-consultar {
@@ -220,95 +301,3 @@ textarea::placeholder {
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(226, 140, 245, 0.2);
 }
-
-
-/* Estilos del menú de navegación */
-.menu {
-    background-color: #f0f8fc; /* Azul Pastel Suave */
-    padding: 15px 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    margin-bottom: 20px; /* Espacio debajo del menú para separarlo del contenido */
-    border-radius: 8px; /* Bordes redondeados para que el menú se vea suave */
-    position: relative; /* Posicionamiento normal relativo al flujo de la página */
-    top: 0; /* Alinea el menú con la parte superior del documento */
-    left: 0;
-    width: 100%;
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.menu ul li {
-    margin: 0;
-}
-
-.menu ul li a {
-    text-decoration: none;
-    color: #5a6f7b; /* Azul Grisáceo Pastel */
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
-}
-
-.menu ul li a:hover {
-    background-color: #b3d7e6; /* Azul Menta Pastel */
-    color: #ffffff;
-}
-
-/* Ajustes para dispositivos móviles */
-@media (max-width: 576px) {
-    .menu ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu ul li a {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-}
-
-/* Estilos para la tabla de resultados en formato vertical */
-.resultados-vertical {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #f0f8fc; /* Fondo suave */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.resultados-vertical th, .resultados-vertical td {
-    padding: 12px 15px;
-    text-align: left;
-    color: #5a6f7b; /* Azul grisáceo pastel */
-    border-bottom: 1px solid #b3d7e6; /* Línea inferior de celdas */
-}
-
-.resultados-vertical th {
-    background-color: #b3d7e6; /* Azul menta pastel */
-    font-weight: 600;
-    text-transform: uppercase;
-    width: 30%; /* Ajusta el ancho de las celdas de encabezado */
-}
-
-.resultados-vertical tr:nth-child(even) {
-    background-color: #eaf2f7; /* Alternancia de color de filas */
-}
-
-.resultados-vertical tr:hover {
-    background-color: #d9eaf1; /* Resaltado de fila al pasar el ratón */
-}
-

@@ -1,10 +1,10 @@
 <?php
-// Incluir archivo de conexión
+
 include 'conexion.php';
 
 // Función para obtener los datos de las provincias
 function obtenerProvincias() {
-    global $conn; // Usar la conexión global
+    global $conn; 
 
     $query = "SELECT codigo_provincia, nombre_provincia FROM provincia";
     $result = $conn->query($query);
@@ -17,12 +17,12 @@ function obtenerProvincias() {
         }
     }
 
-    return $provincias; // Devolver los datos como un array
+    return $provincias; 
 }
 
 // Función para obtener los datos de los distritos filtrados por provincia
 function obtenerDistritos($codigo_provincia) {
-    global $conn; // Usar la conexión global
+    global $conn; 
 
     $query = "SELECT codigo_distrito, nombre_distrito FROM distrito WHERE codigo_provincia = ?";
     $stmt = $conn->prepare($query);
@@ -38,12 +38,12 @@ function obtenerDistritos($codigo_provincia) {
         }
     }
 
-    return $distritos; // Devolver los datos como un array
+    return $distritos; 
 }
 
 // Función para obtener los corregimientos filtrados por distrito
 function obtenerCorregimientos($codigo_distrito) {
-    global $conn; // Usar la conexión global
+    global $conn;
 
     $query = "SELECT codigo_corregimiento, nombre_corregimiento FROM corregimiento WHERE codigo_distrito = ?";
     $stmt = $conn->prepare($query);
@@ -59,6 +59,6 @@ function obtenerCorregimientos($codigo_distrito) {
         }
     }
 
-    return $corregimientos; // Devolver los datos como un array
+    return $corregimientos; 
 }
 ?>
